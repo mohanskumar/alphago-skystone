@@ -26,8 +26,8 @@ public class AlphaGoHardware {
     public void init(HardwareMap ahwMap) {
         hMap = ahwMap;
 
-        leftDrive = hMap.dcMotor.get("left_drive");
-        rightDrive = hMap.dcMotor.get("right_drive");
+        //leftDrive = hMap.dcMotor.get("left_drive");
+        //rightDrive = hMap.dcMotor.get("right_drive");
         rearLeftDrive = hMap.dcMotor.get("rear_left_drive");
         rearRightDrive = hMap.dcMotor.get("rear_right_drive");
         frontLeftDrive = hMap.dcMotor.get("front_left_drive");
