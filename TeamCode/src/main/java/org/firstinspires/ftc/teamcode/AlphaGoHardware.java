@@ -1,37 +1,57 @@
 package org.firstinspires.ftc.teamcode;
-import com.qualcomm.hardware.bosch.BNO055IMU;
-import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.hardware.ColorSensor;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DigitalChannel;
-import com.qualcomm.robotcore.hardware.DistanceSensor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class AlphaGoHardware {
-
+public class AlphaGoHardware
+{
+    /* Public OpMode members. */
     public DcMotor leftDrive;
     public DcMotor rightDrive;
-    public DcMotor rearLeftDrive = null;
-    public DcMotor rearRightDrive = null;
-    public DcMotor frontLeftDrive = null;
-    public DcMotor frontRightDrive = null;
+    public DcMotor rearLeftDrive;
+    public DcMotor rearRightDrive;
+    public DcMotor frontLeftDrive;
+    public DcMotor frontRightDrive;
 
-    HardwareMap hMap = null;
+    /* local OpMode members. */
+    HardwareMap hwMap =  null;
+    private ElapsedTime period = new ElapsedTime();
 
-    public AlphaGoHardware() {
+    /* Constructor */
+    public AlphaGoHardware(){
 
     }
 
+    /* Initialize standard Hardware interfaces */
     public void init(HardwareMap ahwMap) {
-        hMap = ahwMap;
+        // Save reference to Hardware map
+        hwMap = ahwMap;
 
-        //leftDrive = hMap.dcMotor.get("left_drive");
-        //rightDrive = hMap.dcMotor.get("right_drive");
-        rearLeftDrive = hMap.dcMotor.get("rear_left_drive");
-        rearRightDrive = hMap.dcMotor.get("rear_right_drive");
-        frontLeftDrive = hMap.dcMotor.get("front_left_drive");
-        frontRightDrive = hMap.dcMotor.get("front_right_drive");
+        // Define and Initialize Motors
+        leftDrive  = hwMap.get(DcMotor.class, "left_drive");
+        rightDrive = hwMap.get(DcMotor.class, "right_drive");
+        frontLeftDrive = hwMap.get(DcMotor.class, "FL_drive");
+        frontRightDrive = hwMap.get(DcMotor.class, "FR_drive");
+        rearLeftDrive = hwMap.get(DcMotor.class, "RL_drive");
+        rearRightDrive = hwMap.get(DcMotor.class, "RR_drive");
+
+        leftDrive.setDirection(DcMotor.Direction.FORWARD); // Set to REVERSE if using AndyMark motors
+        rightDrive.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
+        frontRightDrive.setDirection(DcMotor.Direction.REVERSE);
+        rearRightDrive.setDirection(DcMotor.Direction.REVERSE);
+
+
+        // Set all motors to zero power
+        leftDrive.setPower(0);
+        rightDrive.setPower(0);
+        frontLeftDrive.setPower(0);
+        frontRightDrive.setPower(0);
+        rearLeftDrive.setPower(0);
+        rearRightDrive.setPower(0);
 
     }
-}
+ }
+

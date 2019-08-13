@@ -9,15 +9,13 @@ public class AutonomousEncoderSample extends LinearOpMode {
 
     private AlphaGoHardware alpha = new AlphaGoHardware();
 
-    static final double TICKS_PER_REV = 383.6;//Tick per revolution
+
 
     @Override
     public void runOpMode() {
 
-        alpha.init(hardwareMap);
-        waitForStart();
-
 
 
     }
+
 }

@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 public class MecanumDrive extends LinearOpMode
 {
     private ElapsedTime runtime = new ElapsedTime();
+    private MecanumDrive mecanumDrive = new MecanumDrive();
     private AlphaGoHardware alpha = new AlphaGoHardware();
 
     @Override
@@ -25,6 +26,7 @@ public class MecanumDrive extends LinearOpMode
         runtime.reset();
 
         while (opModeIsActive()) {
+
             double G1leftStickY = -gamepad1.left_stick_y;
 
             boolean G1LeftBumper = gamepad1.left_bumper;
