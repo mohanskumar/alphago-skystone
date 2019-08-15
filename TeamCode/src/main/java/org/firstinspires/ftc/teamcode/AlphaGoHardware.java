@@ -12,10 +12,10 @@ public class AlphaGoHardware {
 
     public DcMotor leftDrive;
     public DcMotor rightDrive;
-    public DcMotor rearLeftDrive = null;
-    public DcMotor rearRightDrive = null;
-    public DcMotor frontLeftDrive = null;
-    public DcMotor frontRightDrive = null;
+    public DcMotor RL_Drive = null;
+    public DcMotor RR_Drive = null;
+    public DcMotor FL_Drive = null;
+    public DcMotor FR_Drive = null;
 
     HardwareMap hMap = null;
 
@@ -28,10 +28,10 @@ public class AlphaGoHardware {
 
         //leftDrive = hMap.dcMotor.get("left_drive");
         //rightDrive = hMap.dcMotor.get("right_drive");
-        rearLeftDrive = hMap.dcMotor.get("rear_left_drive");
-        rearRightDrive = hMap.dcMotor.get("rear_right_drive");
-        frontLeftDrive = hMap.dcMotor.get("front_left_drive");
-        frontRightDrive = hMap.dcMotor.get("front_right_drive");
+        RL_Drive = hMap.dcMotor.get("RL_drive");
+        RR_Drive = hMap.dcMotor.get("RR_drive");
+        FL_Drive = hMap.dcMotor.get("FL_drive");
+        FR_Drive = hMap.dcMotor.get("FR_drive");
 
     }
 }
