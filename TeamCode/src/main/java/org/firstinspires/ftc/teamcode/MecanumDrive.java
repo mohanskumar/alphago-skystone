@@ -16,10 +16,10 @@ public class MecanumDrive extends LinearOpMode
         telemetry.update();
 
         alpha.init(hardwareMap);
-        alpha.frontLeftDrive.setPower(0);
-        alpha.frontRightDrive.setPower(0);
-        alpha.rearLeftDrive.setPower(0);
-        alpha.rearRightDrive.setPower(0);
+        alpha.FL_Drive.setPower(0);
+        alpha.FR_Drive.setPower(0);
+        alpha.RL_Drive.setPower(0);
+        alpha.RR_Drive.setPower(0);
 
         waitForStart();
         runtime.reset();
@@ -32,66 +32,66 @@ public class MecanumDrive extends LinearOpMode
 
             if (G1LeftBumper){//Turn Left
 
-                alpha.frontLeftDrive.setPower(-1);
-                alpha.rearLeftDrive.setPower(-1);
-                alpha.frontRightDrive.setPower(-1);
-                alpha.rearRightDrive.setPower(-1);
+                alpha.FL_Drive.setPower(-1);
+                alpha.RL_Drive.setPower(-1);
+                alpha.FR_Drive.setPower(-1);
+                alpha.RR_Drive.setPower(-1);
 
             }else if(G1RightBumper){//Turn Right
 
-                alpha.frontLeftDrive.setPower(1);
-                alpha.rearLeftDrive.setPower(1);
-                alpha.frontRightDrive.setPower(1);
-                alpha.rearRightDrive.setPower(1);
+                alpha.FL_Drive.setPower(1);
+                alpha.RL_Drive.setPower(1);
+                alpha.FR_Drive.setPower(1);
+                alpha.RR_Drive.setPower(1);
 
             }else if(gamepad1.dpad_up){//Forwards Slow
 
-                alpha.frontLeftDrive.setPower(.5);
-                alpha.rearLeftDrive.setPower(.5);
-                alpha.frontRightDrive.setPower(-.5);
-                alpha.rearRightDrive.setPower(-.5);
+                alpha.FL_Drive.setPower(.5);
+                alpha.RL_Drive.setPower(.5);
+                alpha.FR_Drive.setPower(-.5);
+                alpha.RR_Drive.setPower(-.5);
 
             }else if(gamepad1.dpad_down){//Backwards Slow
 
-                alpha.frontLeftDrive.setPower(-.5);
-                alpha.rearLeftDrive.setPower(-.5);
-                alpha.frontRightDrive.setPower(.5);
-                alpha.rearRightDrive.setPower(.5);
+                alpha.FL_Drive.setPower(-.5);
+                alpha.RL_Drive.setPower(-.5);
+                alpha.FR_Drive.setPower(.5);
+                alpha.RR_Drive.setPower(.5);
 
             }else if(gamepad1.dpad_left){//Strafe left Slow
 
-                alpha.frontLeftDrive.setPower(-1);
-                alpha.rearLeftDrive.setPower(1);
-                alpha.frontRightDrive.setPower(-1);
-                alpha.rearRightDrive.setPower(1);
+                alpha.FL_Drive.setPower(-1);
+                alpha.RL_Drive.setPower(1);
+                alpha.FR_Drive.setPower(-1);
+                alpha.RR_Drive.setPower(1);
 
             }else if(gamepad1.dpad_right){//Strafe right Slow
 
-                alpha.frontLeftDrive.setPower(1);
-                alpha.rearLeftDrive.setPower(-1);
-                alpha.frontRightDrive.setPower(1);
-                alpha.rearRightDrive.setPower(-1);
+                alpha.FL_Drive.setPower(1);
+                alpha.RL_Drive.setPower(-1);
+                alpha.FL_Drive.setPower(1);
+                alpha.RL_Drive.setPower(-1);
 
             }else if(gamepad1.right_stick_x>0 && gamepad1.right_stick_x<=1){//strafe left
 
-                alpha.frontLeftDrive.setPower(1);
-                alpha.rearLeftDrive.setPower(-1);
-                alpha.frontRightDrive.setPower(1);
-                alpha.rearRightDrive.setPower(-1);
+                alpha.FL_Drive.setPower(1);
+                alpha.RL_Drive.setPower(-1);
+                alpha.FR_Drive.setPower(1);
+                alpha.RR_Drive.setPower(-1);
 
             } else if(gamepad1.right_stick_x<0 && gamepad1.right_stick_x>=-1){//strafe right
 
-                alpha.frontLeftDrive.setPower(-1);
-                alpha.rearLeftDrive.setPower(1);
-                alpha.frontRightDrive.setPower(-1);
-                alpha.rearRightDrive.setPower(1);
+                alpha.FL_Drive.setPower(-1);
+                alpha.RL_Drive.setPower(1);
+                alpha.FR_Drive.setPower(-1);
+                alpha.RR_Drive.setPower(1);
 
             } else {//Regular Joystick Drive
 
-                alpha.frontLeftDrive.setPower(G1leftStickY);
-                alpha.rearLeftDrive.setPower(G1leftStickY);
-                alpha.frontRightDrive.setPower(-G1leftStickY);
-                alpha.rearRightDrive.setPower(-G1leftStickY);
+                alpha.FL_Drive.setPower(G1leftStickY);
+                alpha.RL_Drive.setPower(G1leftStickY);
+                alpha.FR_Drive.setPower(-G1leftStickY);
+                alpha.RR_Drive.setPower(-G1leftStickY);
 
             }
         }
