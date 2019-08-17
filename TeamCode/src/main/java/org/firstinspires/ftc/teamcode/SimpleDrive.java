@@ -19,7 +19,7 @@ public class SimpleDrive extends LinearOpMode
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
-        alpha.init(hardwareMap);
+        alpha.initBasic(hardwareMap);
 
         alpha.leftDrive.setDirection(DcMotor.Direction.FORWARD);
         alpha.rightDrive.setDirection(DcMotor.Direction.REVERSE);

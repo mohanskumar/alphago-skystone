@@ -15,7 +15,7 @@ public class MecanumDrive extends LinearOpMode
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
-        alpha.init(hardwareMap);
+        alpha.initMecanum(hardwareMap);
         alpha.FL_Drive.setPower(0);
         alpha.FR_Drive.setPower(0);
         alpha.RL_Drive.setPower(0);

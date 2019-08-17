@@ -11,7 +11,7 @@ public class MotorTest extends OpMode {
     float testMotorPower;
     @Override
     public void init() {
-        testMotor = hardwareMap.dcMotor.get("test_motor");
+        testMotor = hardwareMap.dcMotor.get("FL_drive");
         testMotor.setDirection(DcMotor.Direction.FORWARD);
     }
 

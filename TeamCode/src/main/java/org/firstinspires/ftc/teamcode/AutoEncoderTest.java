@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name = "Demo Encoder", group = "Autonomous")
+@Autonomous(name = "Drive by Encoder", group = "Autonomous")
 public class AutoEncoderTest extends LinearOpMode {
 
     private AlphaGoHardware alpha = new AlphaGoHardware();
@@ -22,7 +22,7 @@ public class AutoEncoderTest extends LinearOpMode {
     @Override
     public void runOpMode() {
 
-        alpha.init(hardwareMap);
+        alpha.initMecanum(hardwareMap);
         telemetry.addData("Status", "Resetting Encoders");    //
         telemetry.update();
 
